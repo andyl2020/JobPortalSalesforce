@@ -1,0 +1,41 @@
+{
+    "compilerOptions": {
+        "experimentalDecorators": true,
+        "baseUrl": ".",
+        "paths": {
+            "c/customDataTable": [
+                "customDataTable/customDataTable.js"
+            ],
+            "c/jobParamInputFields": [
+                "jobParamInputFields/jobParamInputFields.js"
+            ],
+            "c/testButton": [
+                "testButton/testButton.js"
+            ],
+            "c/jobSearchButton": [
+                "jobSearchButton/jobSearchButton.js"
+            ],
+            "c/deleteJobsButton": [
+                "deleteJobsButton/deleteJobsButton.js"
+            ],
+            "c/functioningButtonTemplate": [
+                "functioningButtonTemplate/functioningButtonTemplate.js"
+            ],
+            "c/applyToJobsButton": [
+                "applyToJobsButton/applyToJobsButton.js"
+            ],
+            "c/bookmarkJobsButton": [
+                "bookmarkJobsButton/bookmarkJobsButton.js"
+            ]
+        }
+    },
+    "include": [
+        "**/*",
+        "../../../../.sfdx/typings/lwc/**/*.d.ts"
+    ],
+    "typeAcquisition": {
+        "include": [
+            "jest"
+        ]
+    }
+}

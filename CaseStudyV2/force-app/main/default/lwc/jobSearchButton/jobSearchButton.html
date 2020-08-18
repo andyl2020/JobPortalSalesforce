@@ -1,0 +1,18 @@
+<template>
+    <div class="slds-m-top_small slds-m-bottom_medium">
+        <!-- Brand outline variant: Identifies the primary action in a group of buttons, but has a lighter look -->
+        <lightning-button variant="brand-outline" label="Search Jobs" title="Call web api and insert jobs into DB" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+    </div>
+
+    <div class="slds-m-vertical_medium">
+        <p>The label of the button that was clicked is: <span class="slds-text-heading_small">{clickedButtonLabel}</span></p>
+        <template if:true={injectJobStatus}>
+            Injection Status: {injectJobStatus}
+        </template>
+        <template if:true={injectJobError}>
+           Error Status: {injectJobError}
+        </template>
+    </div>
+
+
+</template>

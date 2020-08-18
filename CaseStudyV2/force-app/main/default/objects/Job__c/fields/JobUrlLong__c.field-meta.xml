@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>JobUrlLong__c</fullName>
+    <description>Job url but as a text field because the url field only allows a max of 255 characters.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Url of the job posting.</inlineHelpText>
+    <label>Job Url</label>
+    <length>131072</length>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Html</type>
+    <visibleLines>25</visibleLines>
+</CustomField>

@@ -1,0 +1,59 @@
+<template>
+    <lightning-card title="Delete Selected Rows in Datatable" icon-name="standard:contact" > <br/>
+       <div style="width: auto;">
+           <template if:true={data}>
+                   <div class="slds-grid slds-gutters">
+                           <div class="slds-col">
+                             <span><p style="margin-left: 5%">Selected Records: <b style="color:red;">{recordsCount}</b></p></span>
+                             <span>
+                                 <c-job-param-input-fields></c-job-param-input-fields>
+                             </span>
+                           </div>
+                           <div class="slds-col">
+                               <span>                    
+                                   <lightning-button label={buttonLabel}
+                                                     icon-name="utility:delete"
+                                                     disabled={isTrue}
+                                                     variant="destructive" 
+                                                     onclick={deleteAccounts}
+                                                     style="margin-left: 40%"></lightning-button>
+                               </span>
+                               <br></br>
+                               <div>
+                                   <c-delete-jobs-button 
+                                        selected-records={selectedRecords}
+                                        records-count={recordsCount}
+                                        success-toast-message="Jobs have been deleted!"
+                                        error-toast-message-title="Error when deleting jobs"
+                                        onrefreshtable={resetAndRefreshTable}></c-delete-jobs-button>        
+                               </div>
+                               <br></br>
+                               <div>
+                                   <c-apply-to-jobs-button
+                                        selected-records={selectedRecords}
+                                        records-count={recordsCount}
+                                        success-toast-message="Jobs have been applied to!"
+                                        error-toast-message-title="Error when applying to jobs"
+                                        onrefreshtable={resetAndRefreshTable}></c-apply-to-jobs-button>       
+                                </div>
+                                <br></br>
+                                <div>
+                                    <c-bookmark-jobs-button
+                                        selected-records={selectedRecords}
+                                        records-count={recordsCount}
+                                        success-toast-message="Jobs have been bookmarked!"
+                                        error-toast-message-title="Error when bookmarking jobs"
+                                        onrefreshtable={resetAndRefreshTable}></c-bookmark-jobs-button>
+                                </div>
+                            </div>
+                       </div>
+
+                   <lightning-datatable data={data}
+                                    columns={columnsJobs}
+                                    key-field="id"
+                                    onrowselection={getSelectedRecords}></lightning-datatable>
+           </template>
+
+       </div>
+   </lightning-card>   
+</template>

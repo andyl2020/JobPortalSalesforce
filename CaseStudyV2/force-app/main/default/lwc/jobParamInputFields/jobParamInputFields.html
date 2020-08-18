@@ -1,0 +1,17 @@
+<template>
+	<lightning-card>
+		<div class="slds-m-around_medium">
+			<!-- <h2>Hello- {greeting}!</h2> -->
+			<p>Search for jobs below!   Searched job title: {jobTitleSearchTerm} Searched job location: {jobLocationSearchTerm}</p>
+            <lightning-input label="Job Title" value={jobTitleSearchTerm} onchange={handleTitleChange}></lightning-input>
+            <lightning-input label="Location" value={jobLocationSearchTerm} onchange={handleLocationChange}></lightning-input>
+		</div>
+		<div>
+			<c-job-search-button
+				input-job-title={jobTitleSearchTerm}
+				input-job-location={jobLocationSearchTerm}
+			>
+			</c-job-search-button>
+		</div>
+	</lightning-card>
+</template>

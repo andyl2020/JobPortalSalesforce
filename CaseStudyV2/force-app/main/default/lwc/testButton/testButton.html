@@ -1,0 +1,53 @@
+<template>
+    <div class="slds-m-top_small slds-m-bottom_medium">
+        <h2 class="slds-text-heading_small slds-m-bottom_small">
+            Click the buttons to activate the <code>onclick</code> handler and view the label of the clicked button.
+        </h2>
+        
+        <!-- Brand outline variant: Identifies the primary action in a group of buttons, but has a lighter look -->
+        <lightning-button variant="brand-outline" label="Brand Outline" title="Primary action with lighter look" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+
+
+
+
+
+        <!-- Brand variant: Identifies the primary action in a group of buttons -->
+        <lightning-button variant="brand" label="Brand" title="Primary action" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+
+        <!-- Success variant: Identifies a successful action -->
+        <lightning-button variant="success" label="Success" title="Successful action" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+    </div>
+
+    <div class="slds-m-vertical_medium">
+        <p>The label of the button that was clicked is: <span class="slds-text-heading_small">{clickedButtonLabel}</span></p>
+    </div>
+
+    <template if:true={injectJobStatus}>
+        Injection Status: {injectJobStatus}
+    </template>
+    <template if:true={injectJobError}>
+       Error Status: {injectJobError}
+    </template>
+
+
+    <!-- Gives a block full width of the specific record details -->
+    <lightning-record-view-form
+        record-id="a003D000002HxP4QAK"
+        object-api-name="Job__c">
+        <div class="slds-box">
+            <lightning-output-field field-name="Name">
+            </lightning-output-field>
+            <lightning-output-field field-name="JobUrl__c">
+            </lightning-output-field>
+        </div>
+    </lightning-record-view-form>
+
+    <!-- lists details of ONE RECORD in rows -->
+    <lightning-record-form
+        record-id="a003D000002HxP4QAK"
+        object-api-name="Job__c"
+        layout-type="Full"
+        mode="view">
+    </lightning-record-form>
+
+</template>
